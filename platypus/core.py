@@ -307,6 +307,7 @@ class Algorithm(object):
                            type(self).__name__,
                            self.nfe,
                            datetime.timedelta(seconds=time.time()-start_time))
+                last_log = self.nfe
                 
         LOGGER.log(logging.INFO,
                    "%s finished; Total NFE: %d, Elapsed Time: %s",
