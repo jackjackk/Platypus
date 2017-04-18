@@ -314,6 +314,12 @@ class Algorithm(object):
                    type(self).__name__,
                    self.nfe,
                    datetime.timedelta(seconds=time.time()-start_time))
+
+    def __setstate__(self, state):
+        self.__dict__ = state
+
+    def __getstate__(self):
+        return self.__dict__
             
 def _constraint_eq(x, y):
     return abs(x - y)
